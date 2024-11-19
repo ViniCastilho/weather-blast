@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='UTF-8'>
+        <link rel='stylesheet' href='style.css'>
+        <script src='main.js' defer></script>
+        <title>Weather Blast</title>
+    </head>
+    <body>
+        <div id='main-div' class='center-content'>
+            <h1 class='center-header'><center>Weather Blast</center></h1>
+            <hr>
+            <h3>INSERIR <a href='https://mapas.inmet.gov.br/'>DADOS</a></h3>
+            <p>
+                ARQUIVO CSV:
+                <input id='csv-file' type='file'><br>
+            </p>
+            <p>
+                ESTAÇÃO:
+                <select id='csv-station'>
+                    <option value='A707'>A707 - Presidente Prudente</option>
+                </select>
+            </p>
+            <p>
+                <button id='csv-submit'>INSERIR</button>
+            </p>
+            <hr>
+            <h3>VISUALIZAR DADOS</h3>
+            LINEAR
+            <p>
+                <canvas id='fields-canvas-linear'></canvas>
+            </p>
+            HORA DO DIA
+            <p>
+                <canvas id='fields-canvas-hour'></canvas>
+            </p>
+            MÊS DO ANO
+            <p>
+                <canvas id='fields-canvas-month'></canvas>
+            </p>
+            <p>
+                FILTRAR ENTRE:
+                <input id='fields-begin' type='date'>
+                <input id='fields-end' type='date'>
+            </p>
+            <p>
+                ESTAÇÃO:
+                <select id='fields-station'>
+                    <option value='A707'>A707 - Presidente Prudente</option>
+                </select>
+            </p>
+            <p>
+                CAMPO DA TABELA:
+                <select id='fields-select'>
+                    <option value='temperatureInstant'>TEMPERATURA INSTANTE (°C)</option>
+                    <option value='temperatureMaximum'>TEMPERATURA MÁXIMA (°C)</option>
+                    <option value='temperatureMinimum'>TEMPERATURA MÍNIMA (°C)</option>
+                    <option value='humidityInstant'>UMIDADE INSTANTE (%)</option>
+                    <option value='humidityMaximum'>UMIDADE MÁXIMA (%)</option>
+                    <option value='humidityMinimum'>UMIDADE MÍNIMA (%)</option>
+                    <option value='dewPointInstant'>PONTO DE ORVALHO INSTANTE (°C)</option>
+                    <option value='dewPointMaximum'>PONTO DE ORVALHO MÁXIMO (°C)</option>
+                    <option value='dewPointMinimum'>PONTO DE ORVALHO MÍNIMO (°C)</option>
+                    <option value='pressureInstant'>PRESSÃO INSTANTE (hPa)</option>
+                    <option value='pressureMaximum'>PRESSÃO MÁXIMA (hPa)</option>
+                    <option value='pressureMinimum'>PRESSÃO MÍNIMA (hPA)</option>
+                    <option value='windSpeed'>VELOCIDADE VENTO (m/s)</option>
+                    <option value='windDirection'>DIREÇÃO VENTO (°)</option>
+                    <option value='windGust'>RAJADA VENTO (m/s)</option>
+                    <option value='radiation'>RADIAÇÃO (kJ/m²)</option>
+                    <option value='rain'>CHUVA (mm)</option>
+                </select>
+            </p>
+            <p>
+                <button id='fields-draw'>ATUALIZAR VISUALIZAÇÃO</button>
+            </p>
+        </div>
+    </body>
+</html>
