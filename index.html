@@ -3,17 +3,18 @@
     <head>
         <meta charset='UTF-8'>
         <link rel='stylesheet' href='style.css'>
+        <script src='sql.js'></script>
         <script src='main.js' defer></script>
         <title>Weather Blast</title>
     </head>
     <body>
-        <div id='main-div' class='center-content'>
+        <div class='main-div'>
             <h1 class='center-header'><center>Weather Blast</center></h1>
-            <hr>
+            <span id='db-status'>(!) BANCO DE DADOS NÃO CARREGADO</span>
             <h3>INSERIR <a href='https://mapas.inmet.gov.br/'>DADOS</a></h3>
             <p>
                 ARQUIVO CSV:
-                <input id='csv-file' type='file'><br>
+                <input id='csv-file' type='file' multiple><br>
             </p>
             <p>
                 ESTAÇÃO:
@@ -24,20 +25,7 @@
             <p>
                 <button id='csv-submit'>INSERIR</button>
             </p>
-            <hr>
             <h3>VISUALIZAR DADOS</h3>
-            LINEAR
-            <p>
-                <canvas id='fields-canvas-linear'></canvas>
-            </p>
-            HORA DO DIA
-            <p>
-                <canvas id='fields-canvas-hour'></canvas>
-            </p>
-            MÊS DO ANO
-            <p>
-                <canvas id='fields-canvas-month'></canvas>
-            </p>
             <p>
                 FILTRAR ENTRE:
                 <input id='fields-begin' type='date'>
@@ -72,8 +60,59 @@
                 </select>
             </p>
             <p>
+                ALCANCE DO VALOR:
+                <select id='fields-range'>
+                    <option value='MAX'>MÁXIMO</option>
+                    <option value='AVG'>MÉDIA</option>
+                    <option value='MIN'>MÍNIMO</option>
+                </select>
+            </p>
+            <p>
                 <button id='fields-draw'>ATUALIZAR VISUALIZAÇÃO</button>
             </p>
+            PERÍODO COMPLETO
+            <p>
+                <canvas id='fields-canvas-linear'></canvas>
+            </p>
+            HORA DO DIA
+            <p>
+                <canvas id='fields-canvas-hour'></canvas>
+            </p>
+            MÊS DO ANO
+            <p>
+                <canvas id='fields-canvas-month'></canvas>
+            </p>
+        </div>
+        <h1></h1>
+        <div class='main-div'>
+            <p>
+                PÁGINA:
+                <input id='tbl-page' type='number' min='1' max='1' value='1'>
+                <button id='tbl-update'>AVANÇAR (MÁX. ?)</button>
+            </p>
+            <table id='tbl-root'>
+                <tr id='tbl-head'>
+                    <th>DATA</th>
+                    <th>ESTAÇÃO</th>
+                    <th>TEMPERATURA INSTANTE (°C)</th>
+                    <th>TEMPERATURA MÁXIMA (°C)</th>
+                    <th>TEMPERATURA MÍNIMA (°C)</th>
+                    <th>UMIDADE INSTANTE (%)</th>
+                    <th>UMIDADE MÁXIMA (%)</th>
+                    <th>UMIDADE MÍNIMA (%)</th>
+                    <th>PONTO DE ORVALHO INSTANTE (°C)</th>
+                    <th>PONTO DE ORVALHO MÁXIMO (°C)</th>
+                    <th>PONTO DE ORVALHO MÍNIMO (°C)</th>
+                    <th>PRESSÃO INSTANTE (hPa)</th>
+                    <th>PRESSÃO MÁXIMA (hPa)</th>
+                    <th>PRESSÃO MÍNIMA (hPA)</th>
+                    <th>VELOCIDADE VENTO (m/s)</th>
+                    <th>DIREÇÃO VENTO (°)</th>
+                    <th>RAJADA VENTO (m/s)</th>
+                    <th>RADIAÇÃO (kJ/m²)</th>
+                    <th>PRECIPITAÇÃO (mm)</th>
+                </tr>
+            </table>
         </div>
     </body>
 </html>

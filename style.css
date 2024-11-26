@@ -14,8 +14,9 @@ body {
     background: rgb(17, 51, 102);
     background: linear-gradient(
         270deg, 
-        rgba(51, 85, 119, 1) 0%, 
-        rgba(119,153,187, 1) 100%
+        rgba(51, 85, 119, 1) 0%,
+        rgba(119,153,187, 1) 50%,
+        rgba(51, 85, 119, 1) 100%
     );
 }
 
@@ -23,12 +24,11 @@ input::file-selector-button {
     font-family: monospace;
 }
 
-#main-div {
-    padding: 1rem;
-    border: 0;
+.main-div {
+    padding: 0;
+    border: 1rem solid #D0D0D0;
+    border-radius: 1rem;
     margin: 0;
-
-    width: auto;
-
+    display: inline-block;
     background-color: #D0D0D0;
 }
